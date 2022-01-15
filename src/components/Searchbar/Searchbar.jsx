@@ -14,6 +14,7 @@ export default function Searchbar({ onSubmit }) {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     onSubmit(searchQuery);
+    event.currentTarget.searchQuery.value = "";
   };
 
   const onChangeHandler = (event) => {
@@ -31,7 +32,6 @@ export default function Searchbar({ onSubmit }) {
         <SearchInput
           name="searchQuery"
           type="text"
-          autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
           onChange={onChangeHandler}
