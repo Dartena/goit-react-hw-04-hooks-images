@@ -1,16 +1,12 @@
 import PropTypes from "prop-types";
-import { GalleryImg, GalleryList, ImageGalleryItem } from "../styles/styled";
+import { GalleryList } from "../styles/styled";
+import ImageGalleryItem from "./ImageGalleryItem";
 
 export default function ImageGallery({ searchResult, openPhoto }) {
   return (
     <GalleryList onClick={openPhoto}>
       {searchResult.map((result) => (
-        <ImageGalleryItem key={result.id}>
-          <GalleryImg
-            src={result.webformatURL}
-            data-source={result.largeImageURL}
-          />
-        </ImageGalleryItem>
+        <ImageGalleryItem key={result.id} searchResult={result} />
       ))}
     </GalleryList>
   );
