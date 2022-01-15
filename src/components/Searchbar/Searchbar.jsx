@@ -6,6 +6,7 @@ import {
   SearchBtnLabel,
   SearchForm,
   SearchInput,
+  SearchIcon,
 } from "../styles/styled";
 
 export default function Searchbar({ onSubmit }) {
@@ -15,6 +16,7 @@ export default function Searchbar({ onSubmit }) {
     event.preventDefault();
     onSubmit(searchQuery);
     event.currentTarget.searchQuery.value = "";
+    setSearchQuery("");
   };
 
   const onChangeHandler = (event) => {
@@ -26,6 +28,7 @@ export default function Searchbar({ onSubmit }) {
     <SearchBar>
       <SearchForm onSubmit={onSubmitHandler}>
         <SearchBtn type="submit">
+          <SearchIcon />
           <SearchBtnLabel>Search</SearchBtnLabel>
         </SearchBtn>
 
